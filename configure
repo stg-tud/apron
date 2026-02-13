@@ -391,6 +391,17 @@ then
     cxxflags=$acc
 fi
 
+case $(uname -s)
+in
+    FreeBSD)
+    # FreeBSD (at least 14) required the c++ standard to be c++11 to compile.
+    cxxflags="-std=c++11 $cxxflags"
+    ;;
+    *)
+    ;;
+esac
+
+
 
 # tools
 
