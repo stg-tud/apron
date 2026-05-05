@@ -731,6 +731,7 @@ JNIINC    = -I${JAVA_HOME}/INCLUDE
 CC = $cc
 CFLAGS = -U__STRICT_ANSI__ -DNDEBUG -O3 $cflags
 CFLAGS_DEBUG = -U__STRICT_ANSI__ -UNDEBUG -O0 -g $cflags
+LDFLAGS = -flto -fuse-ld=gold -Wl,-plugin-opt=save-temps
 
 CXX = $cxx
 CXXFLAGS = -U__STRICT_ANSI__ -DNDEBUG -O3 $cxxflags
